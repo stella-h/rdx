@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import dishReducer from '../api';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  dishes: dishReducer,
 });
 
 export default rootReducer;
