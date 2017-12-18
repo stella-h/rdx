@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; //the money maker, the connector to redux.
 import { bindActionCreators } from 'redux';
 
+// action
+import { selectDish } from '../actions/index';
+
 class Menu extends Component {
   render() {
     const { dishes } = this.props;
@@ -10,9 +13,11 @@ class Menu extends Component {
       <div>
         <ul>
           {dishes.map( (dish, index) => (
-            <li key={index}>
+            <li
+              key={ index }
+              onClick={ () => selectDish(dish) }
+            >
               {dish.name}
-              {dish.price}
             </li>
           ))}
         </ul>
@@ -29,7 +34,11 @@ function mapStateToProps(state) {
 // glue between react & redux
 }
 
-export default connect(mapStateToProps)(Menu);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectDish: selectDish }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
 
 //container is a react component that has a direct connection to
 //the state managed by redux
