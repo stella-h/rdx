@@ -7,7 +7,7 @@ import { selectDish } from '../actions/index';
 
 class Menu extends Component {
   render() {
-    const { dishes } = this.props;
+    const { dishes, selectDish } = this.props;
 
     return (
       <div>
@@ -15,7 +15,7 @@ class Menu extends Component {
           {dishes.map( (dish, index) => (
             <li
               key={ index }
-              onClick={ () => selectDish(dish) }
+              onClick={ () => selectDish(dish)}
             >
               {dish.name}
             </li>
