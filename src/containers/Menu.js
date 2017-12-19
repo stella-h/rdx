@@ -1,26 +1,40 @@
+// container is a react component that is bonded with the application state.
+// If the state changes, the container will re-render and update.
+
+
 import React, { Component } from 'react';
-import { connect } from 'react-redux'; //the money maker, the connector to redux.
+//the money maker, the connector to redux from react.
+import { connect } from 'react-redux';
+//this binds the action we have created
 import { bindActionCreators } from 'redux';
+
+import '../../style/style.css';
 
 // action
 import { selectDish } from '../actions/index';
 
 class Menu extends Component {
   render() {
-    const { dishes, selectDish } = this.props;
+
+    const {
+      dishes,
+      selectDish
+    } = this.props;
 
     return (
       <div>
-        <ul>
-          {dishes.map( (dish, index) => (
-            <li
-              key={ index }
-              onClick={ () => selectDish(dish)}
-            >
-              {dish.name}
-            </li>
-          ))}
-        </ul>
+        <h4> Our Daily Specials </h4>
+          <ul className="list-group">
+            {dishes.map( (dish, index) => (
+              <li
+                key={index}
+                onClick={() => selectDish(dish)}
+                className="list-group-item"
+              >
+                {dish.name}
+              </li>
+            ))}
+          </ul>
       </div>
       )
   }
@@ -34,11 +48,16 @@ function mapStateToProps(state) {
 // glue between react & redux
 }
 
+//whatever gets returned from this function, it will end up as a prop
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectDish: selectDish }, dispatch)
+  return bindActionCreators({ selectDish }, dispatch)
+  //makes sure the selected dish function is passing through the reducers
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  )(Menu);
 
 //container is a react component that has a direct connection to
 //the state managed by redux

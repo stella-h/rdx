@@ -4,7 +4,7 @@ import selectDish from '../reducers/selectedDish';
 
 const rootReducer = combineReducers({
   dishes: dishReducer,
-  activeDish: selectDish,
+  selected: selectDish,
 });
 
 export default rootReducer;

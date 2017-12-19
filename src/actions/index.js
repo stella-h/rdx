@@ -5,6 +5,7 @@
 
 
 export function selectDish(dish) {
+  console.log(`You have selected ${dish.name}`)
   return {
     type: 'DISH_SELECTED',
     name: dish,

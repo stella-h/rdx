@@ -1,9 +1,10 @@
 export default function() {
   return [
-    { name: 'pork loin', price: '$6' },
-    { name: 'beef', price: '$10' },
-    { name: 'chicken', price: '$13' },
-    { name: 'fish', price: '$9' },
-    { name: 'goose', price: '$120' },
+    { name: 'Foccacia', price: '$2', description: 'Appetizer. Served with kalamata olives' },
+    { name: 'Kingfish crudo', price: '$22', description: 'Aged kingfish crudo, prosecco, lemon, avruga' },
+    { name: 'Scampi', price: '$13', description: 'Garlic butter, daikon, onions' },
+    { name: 'Spaghettini', price: '$29', description: 'Crab, pepperoncini, mascarpone' },
+    { name: 'Piel de sapo', price: '$21', description: 'Stracciatella, aged chardonnay' },
+    { name: 'Beef', price: '$31', description: 'Wagyu shoulder, burnt onion, scapes' },
   ];
 }
