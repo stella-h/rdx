@@ -8,6 +8,7 @@ export default class App extends Component {
       <div>
         <Menu />
         <MenuDetail />
+
       </div>
     );
   }
