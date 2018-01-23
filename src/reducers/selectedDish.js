@@ -1,3 +1,4 @@
+// this is the reducer
 // function nameOfReducer (previousState, action) {
 //   return newState
 // }

@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 
 import '../../style/style.css';
 
-// action
+// action gets sent / dispatch with on click
 import { selectDish } from '../actions/index';
 
 class Menu extends Component {
@@ -21,6 +21,7 @@ class Menu extends Component {
       selectDish
     } = this.props;
 
+// onclick dispatches an action
     return (
       <div>
         <h4> Our Daily Specials </h4>

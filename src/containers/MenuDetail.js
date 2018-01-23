@@ -19,6 +19,7 @@ class MenuDetail extends Component {
   }
 }
 
+
 function mapStateToProps(state) {
   console.log('currentstate' , state);
   return {
