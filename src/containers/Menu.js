@@ -2,7 +2,7 @@
 // If the state changes, the container will re-render and update.
 
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 //the money maker, the connector to redux from react.
 import { connect } from 'react-redux';
 //this binds the action we have created
@@ -10,16 +10,18 @@ import { bindActionCreators } from 'redux';
 
 import '../../style/style.css';
 
-// action gets sent / dispatch with on click
+// action gets sent / dispatch on click
+// we import the action to describe what will happen
 import { selectDish } from '../actions/index';
 
 class Menu extends Component {
   render() {
 
     const {
-      dishes,
+      dishes,       //these are our dishes from the api.
       selectDish
     } = this.props;
+
 
 // onclick dispatches an action
     return (
@@ -39,6 +41,11 @@ class Menu extends Component {
       </div>
       )
   }
+}
+
+Menu.propTypes = {
+  dishes: PropTypes.array,
+  selectDish: PropTypes.func,
 }
 
 function mapStateToProps(state) {

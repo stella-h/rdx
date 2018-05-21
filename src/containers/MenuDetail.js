@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 class MenuDetail extends Component {
   render() {
 
     const { selectedDish } = this.props;
+
+console.log(`you have selected ${JSON.stringify(selectedDish)}`);
 
     return (
       <div>
@@ -17,6 +19,10 @@ class MenuDetail extends Component {
       </div>
       );
   }
+}
+
+MenuDetail.PropTypes = {
+  selectedDish: PropTypes.object,
 }
 
 

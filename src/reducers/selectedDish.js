@@ -14,6 +14,7 @@ export default function(state = initialState, action) {
     case 'DISH_SELECTED':
       // return [ ...state, action.name];
       return action.name
+
   }
   return state;
 }
